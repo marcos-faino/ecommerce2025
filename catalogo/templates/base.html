@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+<body>
+<header class="container">
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'home' %}">
+                <h1>🛍️<strong>Loja Ifro</strong></h1>
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li><a href="{% url 'listtodos' %}" class="secondary">Produtos</a></li>
+            <li>
+                <details class="dropdown">
+                    <summary>
+                        Conta
+                    </summary>
+                    <ul dir="rtl">
+                        <li><a href="#">Meus Pedidos</a></li>
+                        <li><a href="#">Entrar</a></li>
+                        <li><a href="#">Cadastre-se</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </details>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="container">
+  {% block conteudo %}{% endblock %}
+</main>
+
+</body>
+</html>
