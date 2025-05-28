@@ -25,8 +25,7 @@ Ecommerce - Detalhe do produto {{ produto.nome }}
         <summary role="button" class="outline">{{ produto.nome }}</summary>
             <p>{{ produto.descricao }}</p>
             <p>R$ {{ produto.preco }}</p>
-            <a href="#" role="button" class="secondary">🛒Adicionar ao Carrrinho</a>
-
+            <a href="{% url 'addcarrinho' produto.id %}" role="button" class="secondary">🛒Adicionar ao Carrrinho</a>
     </details>
 </article>
 <script>
