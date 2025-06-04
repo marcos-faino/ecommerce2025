@@ -25,7 +25,12 @@ Ecommerce - Detalhe do produto {{ produto.nome }}
         <summary role="button" class="outline">{{ produto.nome }}</summary>
             <p>{{ produto.descricao }}</p>
             <p>R$ {{ produto.preco }}</p>
-            <a href="{% url 'addcarrinho' produto.id %}" role="button" class="secondary">🛒Adicionar ao Carrrinho</a>
+            <form action="{% url 'addcarrinho' produto.id %}" method="post">
+                {{ formadd }}
+                {% csrf_token %}
+                <input type="submit" value="🛒Adicionar ao Carrrinho"
+                       role="button" class="secondary">
+            </form>
     </details>
 </article>
 <script>

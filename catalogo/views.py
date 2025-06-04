@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, DetailView
+
+from carrinho.forms import CarrinhoAddProdForm
 from .models import Produto, Categoria
 
 
@@ -39,3 +41,11 @@ class ProdutosListView(ListView):
 class ProdutoDetailView(DetailView):
     model = Produto
     template_name = "produtos/detalheproduto.html"
+
+    def get_context_data(self, **kwargs):
+        cont = super().get_context_data(**kwargs)
+        formadd = CarrinhoAddProdForm()
+        cont['formadd'] = formadd
+        return cont
+
+

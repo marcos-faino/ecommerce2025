@@ -27,7 +27,7 @@ CREATE TABLE `auth_group` (
   `name` varchar(150) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,6 +36,7 @@ CREATE TABLE `auth_group` (
 
 LOCK TABLES `auth_group` WRITE;
 /*!40000 ALTER TABLE `auth_group` DISABLE KEYS */;
+INSERT INTO `auth_group` VALUES (1,'clientes');
 /*!40000 ALTER TABLE `auth_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -55,7 +56,7 @@ CREATE TABLE `auth_group_permissions` (
   KEY `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` (`permission_id`),
   CONSTRAINT `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
   CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,6 +65,7 @@ CREATE TABLE `auth_group_permissions` (
 
 LOCK TABLES `auth_group_permissions` WRITE;
 /*!40000 ALTER TABLE `auth_group_permissions` DISABLE KEYS */;
+INSERT INTO `auth_group_permissions` VALUES (1,1,33),(2,1,34),(3,1,35),(4,1,36),(5,1,37),(6,1,38),(7,1,39),(8,1,40);
 /*!40000 ALTER TABLE `auth_group_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,7 +84,7 @@ CREATE TABLE `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
   CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +93,7 @@ CREATE TABLE `auth_permission` (
 
 LOCK TABLES `auth_permission` WRITE;
 /*!40000 ALTER TABLE `auth_permission` DISABLE KEYS */;
-INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can view log entry',1,'view_logentry'),(5,'Can add permission',2,'add_permission'),(6,'Can change permission',2,'change_permission'),(7,'Can delete permission',2,'delete_permission'),(8,'Can view permission',2,'view_permission'),(9,'Can add group',3,'add_group'),(10,'Can change group',3,'change_group'),(11,'Can delete group',3,'delete_group'),(12,'Can view group',3,'view_group'),(13,'Can add user',4,'add_user'),(14,'Can change user',4,'change_user'),(15,'Can delete user',4,'delete_user'),(16,'Can view user',4,'view_user'),(17,'Can add content type',5,'add_contenttype'),(18,'Can change content type',5,'change_contenttype'),(19,'Can delete content type',5,'delete_contenttype'),(20,'Can view content type',5,'view_contenttype'),(21,'Can add session',6,'add_session'),(22,'Can change session',6,'change_session'),(23,'Can delete session',6,'delete_session'),(24,'Can view session',6,'view_session'),(25,'Can add Categoria',7,'add_categoria'),(26,'Can change Categoria',7,'change_categoria'),(27,'Can delete Categoria',7,'delete_categoria'),(28,'Can view Categoria',7,'view_categoria'),(29,'Can add Produto',8,'add_produto'),(30,'Can change Produto',8,'change_produto'),(31,'Can delete Produto',8,'delete_produto'),(32,'Can view Produto',8,'view_produto');
+INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can view log entry',1,'view_logentry'),(5,'Can add permission',2,'add_permission'),(6,'Can change permission',2,'change_permission'),(7,'Can delete permission',2,'delete_permission'),(8,'Can view permission',2,'view_permission'),(9,'Can add group',3,'add_group'),(10,'Can change group',3,'change_group'),(11,'Can delete group',3,'delete_group'),(12,'Can view group',3,'view_group'),(13,'Can add user',4,'add_user'),(14,'Can change user',4,'change_user'),(15,'Can delete user',4,'delete_user'),(16,'Can view user',4,'view_user'),(17,'Can add content type',5,'add_contenttype'),(18,'Can change content type',5,'change_contenttype'),(19,'Can delete content type',5,'delete_contenttype'),(20,'Can view content type',5,'view_contenttype'),(21,'Can add session',6,'add_session'),(22,'Can change session',6,'change_session'),(23,'Can delete session',6,'delete_session'),(24,'Can view session',6,'view_session'),(25,'Can add Categoria',7,'add_categoria'),(26,'Can change Categoria',7,'change_categoria'),(27,'Can delete Categoria',7,'delete_categoria'),(28,'Can view Categoria',7,'view_categoria'),(29,'Can add Produto',8,'add_produto'),(30,'Can change Produto',8,'change_produto'),(31,'Can delete Produto',8,'delete_produto'),(32,'Can view Produto',8,'view_produto'),(33,'Can add pedido',9,'add_pedido'),(34,'Can change pedido',9,'change_pedido'),(35,'Can delete pedido',9,'delete_pedido'),(36,'Can view pedido',9,'view_pedido'),(37,'Can add Item Pedido',10,'add_itenspedido'),(38,'Can change Item Pedido',10,'change_itenspedido'),(39,'Can delete Item Pedido',10,'delete_itenspedido'),(40,'Can view Item Pedido',10,'view_itenspedido');
 /*!40000 ALTER TABLE `auth_permission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -125,7 +127,7 @@ CREATE TABLE `auth_user` (
 
 LOCK TABLES `auth_user` WRITE;
 /*!40000 ALTER TABLE `auth_user` DISABLE KEYS */;
-INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$1000000$O8S4OcKI0Q49NPOhyiKQg3$1YF5FwYfpd3tubSFokthekM1rQa7oBqRfdQ9j13xa+U=','2025-05-14 00:34:44.985748',1,'admin','','','admin@admin.com.br',1,1,'2025-05-14 00:34:18.295002');
+INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$1000000$O8S4OcKI0Q49NPOhyiKQg3$1YF5FwYfpd3tubSFokthekM1rQa7oBqRfdQ9j13xa+U=','2025-06-04 01:47:34.286290',1,'admin','','','admin@admin.com.br',1,1,'2025-05-14 00:34:18.295002');
 /*!40000 ALTER TABLE `auth_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -269,7 +271,7 @@ CREATE TABLE `django_admin_log` (
   CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`),
   CONSTRAINT `django_admin_log_chk_1` CHECK ((`action_flag` >= 0))
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -278,7 +280,7 @@ CREATE TABLE `django_admin_log` (
 
 LOCK TABLES `django_admin_log` WRITE;
 /*!40000 ALTER TABLE `django_admin_log` DISABLE KEYS */;
-INSERT INTO `django_admin_log` VALUES (1,'2025-05-14 00:35:19.557048','1','Mouse Óptico',1,'[{\"added\": {}}]',7,1),(2,'2025-05-14 00:35:30.050575','2','Memória RAM',1,'[{\"added\": {}}]',7,1),(3,'2025-05-14 00:35:53.665242','3','teclado mecanico',1,'[{\"added\": {}}]',7,1),(4,'2025-05-14 01:04:42.981550','1','Mouse 1',1,'[{\"added\": {}}]',8,1),(5,'2025-05-14 01:15:52.710150','2','Mouse 2',1,'[{\"added\": {}}]',8,1),(6,'2025-05-14 01:23:25.480736','3','Mouse 3',1,'[{\"added\": {}}]',8,1),(7,'2025-05-14 01:24:07.824778','4','Mouse 4',1,'[{\"added\": {}}]',8,1),(8,'2025-05-14 01:24:47.660349','5','Teclado Mecânico 1',1,'[{\"added\": {}}]',8,1),(9,'2025-05-14 01:25:34.600146','6','Teclaco Mecânico 2',1,'[{\"added\": {}}]',8,1),(10,'2025-05-14 01:25:46.591319','2','Mouse 2',2,'[{\"changed\": {\"fields\": [\"Disponivel\"]}}]',8,1),(11,'2025-05-14 01:25:46.592656','5','Teclado Mecânico 1',2,'[{\"changed\": {\"fields\": [\"Disponivel\"]}}]',8,1),(12,'2025-05-14 01:26:26.522857','7','Teclado Mecânico 3',1,'[{\"added\": {}}]',8,1),(13,'2025-05-14 01:26:56.720162','8','Memória RAM',1,'[{\"added\": {}}]',8,1),(14,'2025-05-14 01:27:20.097944','9','Memória 2',1,'[{\"added\": {}}]',8,1),(15,'2025-05-14 01:27:38.262860','10','Memória 3',1,'[{\"added\": {}}]',8,1);
+INSERT INTO `django_admin_log` VALUES (1,'2025-05-14 00:35:19.557048','1','Mouse Óptico',1,'[{\"added\": {}}]',7,1),(2,'2025-05-14 00:35:30.050575','2','Memória RAM',1,'[{\"added\": {}}]',7,1),(3,'2025-05-14 00:35:53.665242','3','teclado mecanico',1,'[{\"added\": {}}]',7,1),(4,'2025-05-14 01:04:42.981550','1','Mouse 1',1,'[{\"added\": {}}]',8,1),(5,'2025-05-14 01:15:52.710150','2','Mouse 2',1,'[{\"added\": {}}]',8,1),(6,'2025-05-14 01:23:25.480736','3','Mouse 3',1,'[{\"added\": {}}]',8,1),(7,'2025-05-14 01:24:07.824778','4','Mouse 4',1,'[{\"added\": {}}]',8,1),(8,'2025-05-14 01:24:47.660349','5','Teclado Mecânico 1',1,'[{\"added\": {}}]',8,1),(9,'2025-05-14 01:25:34.600146','6','Teclaco Mecânico 2',1,'[{\"added\": {}}]',8,1),(10,'2025-05-14 01:25:46.591319','2','Mouse 2',2,'[{\"changed\": {\"fields\": [\"Disponivel\"]}}]',8,1),(11,'2025-05-14 01:25:46.592656','5','Teclado Mecânico 1',2,'[{\"changed\": {\"fields\": [\"Disponivel\"]}}]',8,1),(12,'2025-05-14 01:26:26.522857','7','Teclado Mecânico 3',1,'[{\"added\": {}}]',8,1),(13,'2025-05-14 01:26:56.720162','8','Memória RAM',1,'[{\"added\": {}}]',8,1),(14,'2025-05-14 01:27:20.097944','9','Memória 2',1,'[{\"added\": {}}]',8,1),(15,'2025-05-14 01:27:38.262860','10','Memória 3',1,'[{\"added\": {}}]',8,1),(16,'2025-06-04 01:49:05.683067','1','clientes',1,'[{\"added\": {}}]',3,1);
 /*!40000 ALTER TABLE `django_admin_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -295,7 +297,7 @@ CREATE TABLE `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -304,7 +306,7 @@ CREATE TABLE `django_content_type` (
 
 LOCK TABLES `django_content_type` WRITE;
 /*!40000 ALTER TABLE `django_content_type` DISABLE KEYS */;
-INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(3,'auth','group'),(2,'auth','permission'),(4,'auth','user'),(7,'catalogo','categoria'),(8,'catalogo','produto'),(5,'contenttypes','contenttype'),(6,'sessions','session');
+INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(3,'auth','group'),(2,'auth','permission'),(4,'auth','user'),(7,'catalogo','categoria'),(8,'catalogo','produto'),(5,'contenttypes','contenttype'),(10,'pedidos','itenspedido'),(9,'pedidos','pedido'),(6,'sessions','session');
 /*!40000 ALTER TABLE `django_content_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -321,7 +323,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -330,7 +332,7 @@ CREATE TABLE `django_migrations` (
 
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2025-05-14 00:24:04.549434'),(2,'auth','0001_initial','2025-05-14 00:24:05.212794'),(3,'admin','0001_initial','2025-05-14 00:24:05.384709'),(4,'admin','0002_logentry_remove_auto_add','2025-05-14 00:24:05.392016'),(5,'admin','0003_logentry_add_action_flag_choices','2025-05-14 00:24:05.399666'),(6,'contenttypes','0002_remove_content_type_name','2025-05-14 00:24:05.524821'),(7,'auth','0002_alter_permission_name_max_length','2025-05-14 00:24:05.606539'),(8,'auth','0003_alter_user_email_max_length','2025-05-14 00:24:05.636915'),(9,'auth','0004_alter_user_username_opts','2025-05-14 00:24:05.645099'),(10,'auth','0005_alter_user_last_login_null','2025-05-14 00:24:05.717265'),(11,'auth','0006_require_contenttypes_0002','2025-05-14 00:24:05.721830'),(12,'auth','0007_alter_validators_add_error_messages','2025-05-14 00:24:05.729038'),(13,'auth','0008_alter_user_username_max_length','2025-05-14 00:24:05.813866'),(14,'auth','0009_alter_user_last_name_max_length','2025-05-14 00:24:05.898416'),(15,'auth','0010_alter_group_name_max_length','2025-05-14 00:24:05.920926'),(16,'auth','0011_update_proxy_permissions','2025-05-14 00:24:05.929046'),(17,'auth','0012_alter_user_first_name_max_length','2025-05-14 00:24:06.010945'),(18,'catalogo','0001_initial','2025-05-14 00:24:06.156558'),(19,'sessions','0001_initial','2025-05-14 00:24:06.196259');
+INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2025-05-14 00:24:04.549434'),(2,'auth','0001_initial','2025-05-14 00:24:05.212794'),(3,'admin','0001_initial','2025-05-14 00:24:05.384709'),(4,'admin','0002_logentry_remove_auto_add','2025-05-14 00:24:05.392016'),(5,'admin','0003_logentry_add_action_flag_choices','2025-05-14 00:24:05.399666'),(6,'contenttypes','0002_remove_content_type_name','2025-05-14 00:24:05.524821'),(7,'auth','0002_alter_permission_name_max_length','2025-05-14 00:24:05.606539'),(8,'auth','0003_alter_user_email_max_length','2025-05-14 00:24:05.636915'),(9,'auth','0004_alter_user_username_opts','2025-05-14 00:24:05.645099'),(10,'auth','0005_alter_user_last_login_null','2025-05-14 00:24:05.717265'),(11,'auth','0006_require_contenttypes_0002','2025-05-14 00:24:05.721830'),(12,'auth','0007_alter_validators_add_error_messages','2025-05-14 00:24:05.729038'),(13,'auth','0008_alter_user_username_max_length','2025-05-14 00:24:05.813866'),(14,'auth','0009_alter_user_last_name_max_length','2025-05-14 00:24:05.898416'),(15,'auth','0010_alter_group_name_max_length','2025-05-14 00:24:05.920926'),(16,'auth','0011_update_proxy_permissions','2025-05-14 00:24:05.929046'),(17,'auth','0012_alter_user_first_name_max_length','2025-05-14 00:24:06.010945'),(18,'catalogo','0001_initial','2025-05-14 00:24:06.156558'),(19,'sessions','0001_initial','2025-05-14 00:24:06.196259'),(20,'catalogo','0002_alter_produto_imagem','2025-06-04 01:40:38.841165'),(21,'pedidos','0001_initial','2025-06-04 01:40:39.244716');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -356,8 +358,67 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
-INSERT INTO `django_session` VALUES ('h8uishodr6vogri04pg0cy6en741hn6p','.eJxVjEEOwiAQRe_C2pAOFFpcuu8ZyDAMUjWQlHZlvLtt0oVu_3vvv4XHbc1-a7z4OYqrAHH53QLSk8sB4gPLvUqqZV3mIA9FnrTJqUZ-3U737yBjy3vt0qhI9cOoyToGtEpDNI4jYxfMoLHrk3PBJqeSYdSWGIAALBm9ByQ-X9uwN98:1uF056:7-TboRov0Hzsz6XkWFcBMQB3qPjP_GHoDahBZ_xDwdE','2025-05-28 00:34:44.992553');
+INSERT INTO `django_session` VALUES ('bl1wr6ko6kl9352u6sjp2l8surnn2c6h','.eJxljMEOgjAQRP9lz6ZhW1ooR-9-A1m2i6AGtMCJ8O-WhMQQL3OY92ZWYIozVCtgtudnoWHuAwWBCrMLvKPwCBXo3Cqbw3YB86f9rNIqbWBLVk3L3NXLJLHuQyIIp64hfsqwg_Cg4T4qHoc59o3aFXXQSd3GIK_r4Z4OOpq6tPZtqVnnRWnYeUFy2mCwXoJQ1tjCUJa33jeu9bq1QsaxIDKiY2vSgGH7AvidUOU:1uMdE6:MI1qR-qHO6yweTWAJJJpWmFkCOGSlVqVHTLuGl7dQpc','2025-06-18 01:47:34.289852');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pedidos_itenspedido`
+--
+
+DROP TABLE IF EXISTS `pedidos_itenspedido`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pedidos_itenspedido` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `preco_unit` decimal(10,2) NOT NULL,
+  `quantidade` smallint unsigned NOT NULL,
+  `produto_id` bigint NOT NULL,
+  `pedido_id` bigint NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `pedidos_itenspedido_produto_id_2024a0e6_fk_catalogo_produto_id` (`produto_id`),
+  KEY `pedidos_itenspedido_pedido_id_6e9ba3f5_fk_pedidos_pedido_id` (`pedido_id`),
+  CONSTRAINT `pedidos_itenspedido_pedido_id_6e9ba3f5_fk_pedidos_pedido_id` FOREIGN KEY (`pedido_id`) REFERENCES `pedidos_pedido` (`id`),
+  CONSTRAINT `pedidos_itenspedido_produto_id_2024a0e6_fk_catalogo_produto_id` FOREIGN KEY (`produto_id`) REFERENCES `catalogo_produto` (`id`),
+  CONSTRAINT `pedidos_itenspedido_chk_1` CHECK ((`quantidade` >= 0))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pedidos_itenspedido`
+--
+
+LOCK TABLES `pedidos_itenspedido` WRITE;
+/*!40000 ALTER TABLE `pedidos_itenspedido` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pedidos_itenspedido` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pedidos_pedido`
+--
+
+DROP TABLE IF EXISTS `pedidos_pedido`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pedidos_pedido` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `criado` datetime(6) NOT NULL,
+  `atualizado` datetime(6) NOT NULL,
+  `pago` tinyint(1) NOT NULL,
+  `cliente_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `pedidos_pedido_cliente_id_84f4fc73_fk_auth_user_id` (`cliente_id`),
+  CONSTRAINT `pedidos_pedido_cliente_id_84f4fc73_fk_auth_user_id` FOREIGN KEY (`cliente_id`) REFERENCES `auth_user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pedidos_pedido`
+--
+
+LOCK TABLES `pedidos_pedido` WRITE;
+/*!40000 ALTER TABLE `pedidos_pedido` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pedidos_pedido` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -369,4 +430,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-27 19:12:24
+-- Dump completed on 2025-06-03 22:16:57

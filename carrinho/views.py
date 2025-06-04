@@ -19,7 +19,7 @@ class CarrinhoAddProdutoView(FormView):
     def form_valid(self, form):
         cd = form.cleaned_data
         carrinho = Carrinho(self.request)
-        carrinho.addProduto(produto=self.produto, quantidade=cd['quant'],
+        carrinho.addProduto(produto=self.produto, quant=cd['quant'],
                             alterarquant=cd['alterar'])
         return super().form_valid(form)
 
