@@ -2,12 +2,12 @@
 
 {% load static %}
 
-{% block titulo %} Meu Carrinho {% endblock %}
+{% block titulo %} Seu Pedido {% endblock %}
 
 {% block conteudo %}
 <article>
   <header>
-    <h1>Meu Carrinho de Compras 🛒</h1>
+    <h1>Obrigado por comprar conosco</h1>
   </header>
   <table class="stripped">
     <thead data-theme="dark">
@@ -17,11 +17,10 @@
         <th>Quantidade</th>
         <th>Preço Unitário</th>
         <th>Total</th>
-        <th>Remover</th>
       </tr>
     </thead>
     <tbody>
-    {% for item in carrinho %}
+    {% for item in pedido.itens_pedido.all %}
       {% with p=item.produto %}
         <tr>
           <td>
@@ -38,29 +37,16 @@
             {{ p.nome }}
           </td>
           <td>
-            <form action="{% url 'addcarrinho' p.id %}" method="post">
-              {% csrf_token %}
-              {{ item.alterar.quant }}
-              {{ item.alterar.alterar }}
-              <input type="submit" value="Atualizar"
-                     role="button" class="dark">
-            </form>
+            {{ item.quantidade }}
           </td>
           <td>R${{ item.preco }}</td>
-          <td>R${{ item.preco_total }}</td>
-          <td>
-            <form action="{% url 'removecarrinho' p.id %}"
-                  method="post">
-              {% csrf_token %}
-              <input type="submit" value="🗑️" role="button">
-            </form>
-          </td>
+          <td>R${{ item.get_total }}</td>
         </tr>
       {% endwith %}
     {% endfor %}
     <tr>
       <td colspan="4">Total Geral</td>
-      <td colspan="2">R$ {{ carrinho.get_preco_total }}</td>
+      <td colspan="2">R$ {{ pedido.get_total_geral }}</td>
     </tr>
     </tbody>
   </table>
@@ -68,9 +54,11 @@
     <a href="{% url 'listtodos' %}" role="button" class="contrast">
       Continuar comprando...
     </a>
-    <a href="{% url 'novopedido' %}" role="button" class="primary">
-      Finalizar Pedido
+    {% if not pedido.pago %}
+    <a href="" role="button" class="primary">
+      Efetuar pagamento
     </a>
+    {% endif %}
   </div>
 
 </article>
