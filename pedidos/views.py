@@ -36,3 +36,11 @@ class ResumoPedidoTemplateView(TemplateView):
         ct['pedido'] = Pedido.objects.get(id=self.kwargs['idpedido'])
         return ct
 
+class PedidosListView(LoginRequiredMixin, ListView):
+    template_name = 'pedido/meuspedidos.html'
+    model = Pedido
+    context_object_name = 'pedidos'
+
+
+    def get_queryset(self):
+        return Pedido.objects.filter(cliente=self.request.user)

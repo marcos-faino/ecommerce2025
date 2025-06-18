@@ -11,8 +11,12 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import environ
 
 from django.conf.global_settings import LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-vv!1gj(aojwr$oap)man_+pes-^ohc&w0am3v)i%0(()=p!lwr'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -42,6 +46,7 @@ INSTALLED_APPS = [
 
     'catalogo',
     'pedidos',
+    'pagamentos',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +69,7 @@ TEMPLATES = [
             'carrinho/templates',
             'usuarios/templates',
             'pedidos/templates',
+            'pagamentos/templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -86,11 +92,11 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ecommerce2025',
-        'HOST': 'localhost',
-        'PASSWORD': 'alunoifro',
-        'USER': 'root',
-        'PORT': '3306',
+        'NAME': env('DATABASE_NAME'),
+        'HOST': env('DATABASE_HOST'),
+        'PASSWORD': env('DATABASE_PASSWORD'),
+        'USER': env('DATABASE_USER'),
+        'PORT': env('DATABASE_PORT'),
     }
 }
 
@@ -145,3 +151,8 @@ LOGOUT_REDIRECT_URL = 'home'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+BRAINTREE_MERCHANT_ID = env('MERCHANT_ID')
+BRAINTREE_PUBLIC_KEY = env('PUBLIC_KEY')
+BRAINTREE_PRIVATE_KEY = env('PRIVATE_KEY')
+

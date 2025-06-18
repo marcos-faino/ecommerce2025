@@ -29,6 +29,7 @@ urlpatterns = [
     path('carrinho/', include('carrinho.urls')),
     path('usuario/', include('usuarios.urls')),
     path('pedido/', include('pedidos.urls')),
+    path('pagamento/', include('pagamentos.urls')),
     path('', include('catalogo.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL,
