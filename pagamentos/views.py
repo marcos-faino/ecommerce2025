@@ -24,7 +24,7 @@ class ProcessarPagamentoView(FormView):
             public_key=settings.BRAINTREE_PUBLIC_KEY,
             private_key=settings.BRAINTREE_PRIVATE_KEY,
         )
-        self.pedido = Pedido.objects.get(id=request.GET.get('idpedido'))
+        self.pedido = Pedido.objects.get(id=self.kwargs['idpedido'])
         self.braintree_client_token = braintree.ClientToken.generate({})
         return super().dispatch(request, *args, **kwargs)
 
@@ -53,7 +53,7 @@ class ProcessarPagamentoView(FormView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('pgto_realizado')
+        return reverse('realizado')
 
 
 class PagamentoRealizadoView(TemplateView):

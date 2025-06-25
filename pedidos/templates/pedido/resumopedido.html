@@ -55,9 +55,9 @@
       Continuar comprando...
     </a>
     {% if not pedido.pago %}
-    <a href="" role="button" class="primary">
-      Efetuar pagamento
-    </a>
+      <a href="{% url 'processarpgt' pedido.id %}" role="button"
+         class="primary">
+         Efetuar pagamento</a>
     {% endif %}
   </div>
 

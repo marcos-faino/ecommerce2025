@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<article data-theme="dark">
+    <header>
+        <h2>Pagamento realizado com sucesso!!!</h2>
+    </header>
+    <h4>Obrigado por comprar conosco!!!</h4>
+    <a href="{% url 'home' %}" role="button" class="primary">Voltar</a>
+</article>
+{% endblock %}

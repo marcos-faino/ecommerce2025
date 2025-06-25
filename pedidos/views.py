@@ -14,18 +14,21 @@ class PedidoCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         car = Carrinho(self.request)
-        pedido = form.save(commit=False)
-        us = self.request.user
-        pedido.cliente = us
-        pedido.save()
-        for item in car:
-            ItensPedido.objects.create(pedido=pedido,
-                                       produto=item['produto'],
-                                       preco_unit=item['preco'],
-                                       quantidade=item['quantidade'])
-        car.limpar_carrinho()
-        self.request.session['idpedido'] = pedido.id
-        return redirect('resumopedido', pedido.id)
+        if len(car) > 0:
+            pedido = form.save(commit=False)
+            us = self.request.user
+            pedido.cliente = us
+            pedido.save()
+            for item in car:
+                ItensPedido.objects.create(pedido=pedido,
+                                           produto=item['produto'],
+                                           preco_unit=item['preco'],
+                                           quantidade=item['quantidade'])
+            car.limpar_carrinho()
+            self.request.session['idpedido'] = pedido.id
+            return redirect('resumopedido', pedido.id)
+        else:
+            return redirect('home')
 
 
 class ResumoPedidoTemplateView(TemplateView):
