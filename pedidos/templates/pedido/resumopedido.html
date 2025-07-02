@@ -1,22 +1,23 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% load static %}
 
-{% block titulo %} Seu Pedido {% endblock %}
+{% block titulo %} {% trans 'Seu Pedido' %} {% endblock %}
 
 {% block conteudo %}
 <article>
   <header>
-    <h1>Obrigado por comprar conosco</h1>
+    <h1>{% trans 'Obrigado por comprar conosco' %}</h1>
   </header>
   <table class="stripped">
     <thead data-theme="dark">
       <tr>
-        <th>Imagem</th>
-        <th>Produto</th>
-        <th>Quantidade</th>
-        <th>Preço Unitário</th>
-        <th>Total</th>
+        <th>{% trans 'Imagem' %}</th>
+        <th>{% trans 'Produto' %}</th>
+        <th>{% trans 'Quantidade' %}</th>
+        <th>{% trans 'Preço Unitário' %}</th>
+        <th>{% trans 'Total' %} </th>
       </tr>
     </thead>
     <tbody>
@@ -45,19 +46,19 @@
       {% endwith %}
     {% endfor %}
     <tr>
-      <td colspan="4">Total Geral</td>
+      <td colspan="4">{% trans 'Total Geral' %}</td>
       <td colspan="2">R$ {{ pedido.get_total_geral }}</td>
     </tr>
     </tbody>
   </table>
   <div class="grid">
     <a href="{% url 'listtodos' %}" role="button" class="contrast">
-      Continuar comprando...
+      {% trans 'Continuar comprando...' %}
     </a>
     {% if not pedido.pago %}
       <a href="{% url 'processarpgt' pedido.id %}" role="button"
          class="primary">
-         Efetuar pagamento</a>
+         {% trans 'Efetuar pagamento' %}</a>
     {% endif %}
   </div>
 

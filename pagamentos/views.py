@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect, reverse
 
 from ecommerce import settings
@@ -8,7 +9,7 @@ import braintree
 from .forms import CheckoutForm
 
 
-class ProcessarPagamentoView(FormView):
+class ProcessarPagamentoView(LoginRequiredMixin, FormView):
     """
     View para permitir que o usuário realize o pagamento de um pedido
     """

@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block titulo %} Novo Pedido{% endblock %}
+{% block titulo %} {% trans 'Novo Pedido' %} {% endblock %}
 
 {% block conteudo %}
 <article>
-  <h2>Seu Pedido</h2>
+  <h2>{% trans 'Seu Pedido' %}</h2>
   <ul>
     {% for item in car %}
     <li>
@@ -18,7 +19,7 @@
     {% csrf_token %}
     {{ form.as_div }}
     <input type="submit" role="button" class="light"
-           value="Finalizar Pedido">
+           value="{% trans 'Finalizar Pedido' %}">
   </form>
 </article>
 {% endblock %}

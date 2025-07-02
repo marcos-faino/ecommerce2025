@@ -1,3 +1,6 @@
+from django.utils import translation
+from django.utils.translation import gettext as _
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
@@ -30,13 +33,19 @@ class PedidoCreateView(LoginRequiredMixin, CreateView):
         else:
             return redirect('home')
 
+    def get_context_data(self, **kwargs):
+        cont = super().get_context_data(**kwargs)
+        cont['idioma'] = translation.get_language()
+        return cont
 
-class ResumoPedidoTemplateView(TemplateView):
+
+class ResumoPedidoTemplateView(LoginRequiredMixin, TemplateView):
     template_name = 'pedido/resumopedido.html'
 
     def get_context_data(self, **kwargs):
         ct = super().get_context_data(**kwargs)
         ct['pedido'] = Pedido.objects.get(id=self.kwargs['idpedido'])
+        ct['idioma'] = translation.get_language()
         return ct
 
 class PedidosListView(LoginRequiredMixin, ListView):
@@ -47,3 +56,8 @@ class PedidosListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return Pedido.objects.filter(cliente=self.request.user)
+
+    def get_context_data(self, **kwargs):
+        cont = super().get_context_data(**kwargs)
+        cont['idioma'] = translation.get_language()
+        return cont
