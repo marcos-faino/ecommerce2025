@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-01 21:00-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+
+#: .\catalogo\templates\base.html:19
+msgid "Loja Ifro"
+msgstr "Ifro Store"
+
+#: .\catalogo\templates\base.html:24
+#, fuzzy
+#| msgid "Produto"
+msgid "Produtos"
+msgstr "Product"
+
+#: .\catalogo\templates\base.html:32
+#: .\pedidos\templates\pedido\meuspedidos.html:4
+msgid "Meus Pedidos"
+msgstr "My Orders"
+
+#: .\catalogo\templates\base.html:47
+msgid "Conta"
+msgstr "Account"
+
+#: .\catalogo\templates\base.html:50
+msgid "Entrar"
+msgstr "Login"
+
+#: .\catalogo\templates\base.html:51
+msgid "Cadastre-se"
+msgstr "Register"
+
+#: .\catalogo\templates\index.html:6
+msgid "Loja Ifro 2025 - Catálogo de Produtos"
+msgstr "Ifro Store 2025 - Product Catalog"
+
+#: .\catalogo\templates\index.html:10
+msgid "Melhor Ecommerce do Brasil"
+msgstr "The Best Ecommerce from Brazil"
+
+#: .\catalogo\templates\index.html:11
+msgid "Aproveite nossas ofertas ..."
+msgstr "Take advantage of our offers..."
+
+#: .\pedidos\models.py:35
+msgid "Item Pedido"
+msgstr "Order Item"
+
+#: .\pedidos\models.py:36
+msgid "Itens Pedido"
+msgstr "Order Items"
+
+#: .\pedidos\templates\pedido\meuspedidos.html:11
+msgid "Pedido Nº"
+msgstr "Order Nº"
+
+#: .\pedidos\templates\pedido\meuspedidos.html:12
+msgid "Itens"
+msgstr "Items"
+
+#: .\pedidos\templates\pedido\meuspedidos.html:13
+#: .\pedidos\templates\pedido\resumopedido.html:20
+msgid "Total"
+msgstr "Total"
+
+#: .\pedidos\templates\pedido\meuspedidos.html:14
+msgid "Pago"
+msgstr "Paid"
+
+#: .\pedidos\templates\pedido\meuspedidos.html:39
+msgid "Você ainda não possui pedidos!!!"
+msgstr "You have no orders yet!!!"
+
+#: .\pedidos\templates\pedido\novopedido.html:4
+msgid "Novo Pedido"
+msgstr "New Order"
+
+#: .\pedidos\templates\pedido\novopedido.html:8
+#: .\pedidos\templates\pedido\resumopedido.html:6
+msgid "Seu Pedido"
+msgstr "Your Order"
+
+#: .\pedidos\templates\pedido\novopedido.html:22
+msgid "Finalizar Pedido"
+msgstr "Finalize Order"
+
+#: .\pedidos\templates\pedido\resumopedido.html:11
+msgid "Obrigado por comprar conosco"
+msgstr "Thank you for shopping with us"
+
+#: .\pedidos\templates\pedido\resumopedido.html:16
+msgid "Imagem"
+msgstr "Image"
+
+#: .\pedidos\templates\pedido\resumopedido.html:17
+msgid "Produto"
+msgstr "Product"
+
+#: .\pedidos\templates\pedido\resumopedido.html:18
+msgid "Quantidade"
+msgstr "Amount"
+
+#: .\pedidos\templates\pedido\resumopedido.html:19
+msgid "Preço Unitário"
+msgstr "Unit Price"
+
+#: .\pedidos\templates\pedido\resumopedido.html:49
+msgid "Total Geral"
+msgstr "Grand total"
+
+#: .\pedidos\templates\pedido\resumopedido.html:56
+msgid "Continuar comprando..."
+msgstr "Continue shopping..."
+
+#: .\pedidos\templates\pedido\resumopedido.html:61
+msgid "Efetuar pagamento"
+msgstr "Make payment"
+
+#: .\usuarios\views.py:22
+msgid "Usuário cadastrado!!!"
+msgstr "Registered user!!!"
+
+#: .\usuarios\views.py:26
+msgid "Cadastro não efetuado!!!"
+msgstr "Registration not completed!!!"

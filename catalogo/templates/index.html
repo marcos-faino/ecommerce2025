@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block titulo %}
-    Loja Ifro 2025 - Catálogo de Produtos
+    {% trans 'Loja Ifro 2025 - Catálogo de Produtos' %}
 {% endblock %}
 {% block conteudo %}
     <article data-theme="dark">
-        <h2>Melhor Ecommerce do Brasil</h2>
-        <p>Aproveite nossas ofertas ...</p>
+        <h2>{% trans 'Melhor Ecommerce do Brasil' %}</h2>
+        <p>{% trans 'Aproveite nossas ofertas ...' %}</p>
     </article>
     <article class="grid" style="text-align:center">
      {% for p in prods %}

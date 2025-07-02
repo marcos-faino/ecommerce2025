@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-01 20:31-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+#: .\pedidos\models.py:35
+msgid "Item Pedido"
+msgstr ""
+
+#: .\pedidos\models.py:36
+msgid "Itens Pedido"
+msgstr ""
+
+#: .\pedidos\templates\pedido\meuspedidos.html:4
+msgid "Meus Pedidos"
+msgstr ""
+
+#: .\pedidos\templates\pedido\meuspedidos.html:11
+msgid "Pedido Nº"
+msgstr ""
+
+#: .\pedidos\templates\pedido\meuspedidos.html:12
+msgid "Itens"
+msgstr ""
+
+#: .\pedidos\templates\pedido\meuspedidos.html:13
+#: .\pedidos\templates\pedido\resumopedido.html:20
+msgid "Total"
+msgstr ""
+
+#: .\pedidos\templates\pedido\meuspedidos.html:14
+msgid "Pago"
+msgstr ""
+
+#: .\pedidos\templates\pedido\meuspedidos.html:39
+msgid "Você ainda não possui pedidos!!!"
+msgstr ""
+
+#: .\pedidos\templates\pedido\novopedido.html:4
+msgid "Novo Pedido"
+msgstr ""
+
+#: .\pedidos\templates\pedido\novopedido.html:8
+#: .\pedidos\templates\pedido\resumopedido.html:6
+msgid "Seu Pedido"
+msgstr ""
+
+#: .\pedidos\templates\pedido\novopedido.html:22
+msgid "Finalizar Pedido"
+msgstr ""
+
+#: .\pedidos\templates\pedido\resumopedido.html:11
+msgid "Obrigado por comprar conosco"
+msgstr ""
+
+#: .\pedidos\templates\pedido\resumopedido.html:16
+msgid "Imagem"
+msgstr ""
+
+#: .\pedidos\templates\pedido\resumopedido.html:17
+msgid "Produto"
+msgstr ""
+
+#: .\pedidos\templates\pedido\resumopedido.html:18
+msgid "Quantidade"
+msgstr ""
+
+#: .\pedidos\templates\pedido\resumopedido.html:19
+msgid "Preço Unitário"
+msgstr ""
+
+#: .\pedidos\templates\pedido\resumopedido.html:49
+msgid "Total Geral"
+msgstr ""
+
+#: .\pedidos\templates\pedido\resumopedido.html:56
+msgid "Continuar comprando..."
+msgstr ""
+
+#: .\pedidos\templates\pedido\resumopedido.html:61
+msgid "Efetuar pagamento"
+msgstr ""
+
+#: .\usuarios\views.py:22
+msgid "Usuário cadastrado!!!"
+msgstr ""
+
+#: .\usuarios\views.py:26
+msgid "Cadastro não efetuado!!!"
+msgstr ""
