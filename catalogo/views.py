@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from gettext import translation
+
+from django.utils import translation as tr
 from django.views.generic import TemplateView, ListView, DetailView
 
 from carrinho.forms import CarrinhoAddProdForm
@@ -11,6 +13,7 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         cont = super().get_context_data(**kwargs)
         cont['prods'] = Produto.disponiveis.all().order_by('?')[:3]
+        cont['idioma'] = tr.get_language()
         return cont
 
 

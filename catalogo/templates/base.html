@@ -1,3 +1,4 @@
+{% load static %}
 {% load i18n %}
 <!DOCTYPE html>
 <html lang="{% if idioma %}
@@ -9,9 +10,19 @@
     <meta charset="UTF-8">
     <title>{% block titulo %}{% endblock %}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        #fundo{
+            min-width: 100vw;
+            min-height: 100vh;
+            background-image: url("{% static 'img_base/loja.png' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 <body>
-<header class="container">
+<div id="fundo">
+<header class="container" data-theme="dark">
     <nav>
         <ul>
             <li>
@@ -64,6 +75,7 @@
 <main class="container">
   {% block conteudo %}{% endblock %}
 </main>
+</div>
   {% block scripts %} {% endblock %}
 </body>
 </html>

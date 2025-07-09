@@ -20,19 +20,19 @@ msgstr ""
 "1 : 2;\n"
 #: .\pedidos\models.py:35
 msgid "Item Pedido"
-msgstr ""
+msgstr "Order Item"
 
 #: .\pedidos\models.py:36
 msgid "Itens Pedido"
-msgstr ""
+msgstr "Order Items"
 
 #: .\pedidos\templates\pedido\meuspedidos.html:4
 msgid "Meus Pedidos"
-msgstr ""
+msgstr "My Orders"
 
 #: .\pedidos\templates\pedido\meuspedidos.html:11
 msgid "Pedido Nº"
-msgstr ""
+msgstr "Order"
 
 #: .\pedidos\templates\pedido\meuspedidos.html:12
 msgid "Itens"
@@ -45,7 +45,7 @@ msgstr ""
 
 #: .\pedidos\templates\pedido\meuspedidos.html:14
 msgid "Pago"
-msgstr ""
+msgstr "Paid"
 
 #: .\pedidos\templates\pedido\meuspedidos.html:39
 msgid "Você ainda não possui pedidos!!!"

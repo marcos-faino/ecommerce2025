@@ -24,10 +24,8 @@ msgid "Loja Ifro"
 msgstr "Ifro Store"
 
 #: .\catalogo\templates\base.html:24
-#, fuzzy
-#| msgid "Produto"
 msgid "Produtos"
-msgstr "Product"
+msgstr "Products"
 
 #: .\catalogo\templates\base.html:32
 #: .\pedidos\templates\pedido\meuspedidos.html:4
